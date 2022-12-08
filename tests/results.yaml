@@ -1,0 +1,33 @@
+# 
+# Expected errors from test run
+# 
+ant:
+  KEYS:
+    - "[CHK03] KEYS file could not be read or did not contain any valid signing keys!"
+  dist/ant/test_present.zip:
+    - "[CHK01] The signature file test_present.zip.asc was signed with a key not found in the project's KEYS file: 7BA5B9750ABA977B"
+httpd:
+  dist/httpd/test_extended.zip:
+    - "[CHK04] Detached signature file test_extended.zip.asc was signed by Expired (EAA491E0404FDE47) but the key expired before the file was signed!"
+  dist/httpd/test_presentnocksum.zip:
+    - "[CHK02] No valid checksum files (.sha256, .sha512) found for test_presentnocksum.zip"
+  dist/httpd/test_date.zip:
+    - "[CHK05] The signature file test_date.zip.asc could not be used to verify the release artifact (corrupt sig?)"
+  dist/httpd/test_empty.zip:
+    - "[CHK05] The signature file test_empty.zip.asc could not be used to verify the release artifact (corrupt sig?)"
+  dist/httpd/test_absent.zip:
+    - "[CHK01] The signature file test_absent.zip.asc was signed with a key not found in the project's KEYS file: 3ABFA8DD4D4EB5F1"
+  dist/httpd/test_wrong.zip:
+    - "[CHK05] The signature file test_wrong.zip.asc could not be used to verify the release artifact (corrupt sig?)"
+  dist/httpd/test_presentnoasc.zip:
+    - "[CHK05] No detached signature file could be found for test_presentnoasc.zip - all artifact bundles MUST have an accompanying .asc signature file!"
+  dist/httpd/test_wrongext.zip:
+    - "[CHK06] test_wrongext.zip.sha512 looks like it could be a sha256 checksum, but has a sha512 extension!"
+    - "[CHK06] Checksum does not match checksum file test_wrongext.zip.sha512!"
+    - "[CHK06] Calculated sha512 checksum of test_wrongext.zip was: 549e18e3f05ed6829ac760e9cc264b2564ed7682b9e4dc69be66b995e5cca5440267e210201db8a1b9503a0698db285a51f21dcf8ac4aaac153dbaac2fb6ddb3"
+    - "[CHK06] Checksum file test_wrongext.zip.sha512 said it should have been: 195e511d52ebbc933237eda147ab6a0d03dbfdbc70122755bfb1eb92e74a14e8"
+  dist/httpd/test_oldext.zip:
+    - "[CHK02] No valid checksum files (.sha256, .sha512) found for test_oldext.zip"
+    - "[CHK02] Only weak checksum files (.md5, .sha1) found for test_oldext.zip. Project MUST use sha256/sha512!"
+  dist/httpd/test_absentwrong.zip: # the key as absent, so cannot detect that it is wrong
+    - "[CHK01] The signature file test_absentwrong.zip.asc was signed with a key not found in the project's KEYS file: 3ABFA8DD4D4EB5F1"

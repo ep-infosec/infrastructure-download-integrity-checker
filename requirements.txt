@@ -1,0 +1,4 @@
+python-gnupg
+pyyaml
+asfpy>=0.37
+requests

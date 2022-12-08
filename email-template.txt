@@ -1,0 +1,19 @@
+The following errors were detected in your distribution directory during a routine check:
+
+{errormsg}
+
+Please address these issues AS SOON AS POSSIBLE.
+
+To ease the resolution process, we have assembled a resolution primer at:
+https://infra.apache.org/release-integrity-primer.html
+This page contains descriptions of the error codes in this report and examples of
+how to address the issues.
+
+Failure to comply within a reasonable timeframe will result in these files being pulled from
+the distribution services by ASF Infrastructure. Our current release distribution policies
+can be found at: https://infra.apache.org/release-distribution.html
+
+If you have any questions or remarks, please let us know at: private@infra.apache.org
+
+With regards,
+ASF Infrastructure.

@@ -1,0 +1,13 @@
+[Unit]
+Description=ASF Download Integrity Checker
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/download-integrity-checker
+ExecStart=/usr/local/bin/pipenv run python3 main.py --forever
+Restart=always
+User=www-data
+Group=www-data
+
+[Install]
+WantedBy=multi-user.target

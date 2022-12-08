@@ -1,0 +1,19 @@
+extra_recipients:  # Additional recipients beyond private@project.a.o
+  - private@infra.apache.org
+gpg_homedir:  /tmp/toolchain  # GPG homedir (will create a subdir for each project)
+dist_dir:     dist       # Where dist files are found
+strong_checksums:   # These checksum files MUST exist for newer releases (after 24 Oct 2021)
+  - sha512
+  - sha256
+weak_checksums:  # These files may exist, and will be valid for older releases (before 24 Oct 2021)
+  - sha1
+  - md5
+strong_checksum_deadline: 1635112800  # When sha256/sha512 was enforced. Older files don't require these
+known_extensions:  # Files with these extensions MUST be verifiable
+  - zip
+  - gz
+  - bz
+  - bz2
+  - 7zip
+  - dmg
+  - exe
